@@ -41,3 +41,6 @@ $ docker build -t backend:1.0.0-staging .
 
 # Docker-Compose Run
 $ docker-compose up
+
+# Go to
+http://localhost:3000/swagger
