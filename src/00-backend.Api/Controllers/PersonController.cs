@@ -33,12 +33,14 @@ namespace backend.Api.Controllers
 
         }
 
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Get))]
         [HttpGet]
         public IActionResult Get()
         {
             return Ok(_mapper.Map<IEnumerable<PersonModel>>(_personService.GetAll()));
         }
 
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Delete))]
         [HttpDelete("{id}")]
         public IActionResult DeteleById(Guid id)
         {
@@ -46,6 +48,7 @@ namespace backend.Api.Controllers
             return Ok();
         }
 
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Put))]
         [HttpPut()]
         public IActionResult Put([FromBody] PersonModel personModel)
         {
@@ -56,6 +59,7 @@ namespace backend.Api.Controllers
             return Ok(_mapper.Map<PersonModel>(_personService.Update(person)));
         }
         
+        [ApiConventionMethod(typeof(DefaultApiConventions), nameof(DefaultApiConventions.Post))]
         [HttpPost()]
         public IActionResult Post([FromBody] PersonCreateModel personModel)
         {
