@@ -1,0 +1,6 @@
+version: "3.8"
+services:
+  backend:
+    image: backend:1.0.0-staging
+    ports: 
+      - "3000:80"
