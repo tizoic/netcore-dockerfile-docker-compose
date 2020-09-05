@@ -1,6 +1,14 @@
 # netcore-dockerfile-docker-compose
 API REST with .net core 3.1, , dockerfile and docker-compose
 
+# Pre Requisite
+# Disable swap memory
+
+$ sudo swapoff -a
+
+$ sudo nano /etc/fstab (Comment swap line / reboot)
+
+
 # Uninstall old versions docker
 $ sudo apt-get remove docker docker-engine docker.io containerd runc
 
